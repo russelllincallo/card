@@ -1,0 +1,89 @@
+@forward 'variables';
+@use 'mixins' as m;
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 375px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    font-family: $Montserrat;
+    font-family: $Fraunces;
+    background: $Cream;
+    font-size: rem(14);
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+// FLEXBOX
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-jc-fe {
+        justify-content: flex-end;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+    &-fd-c {
+        flex-direction: column;
+    }
+}
+
+//BUTTONS
+button,
+.button {
+    width: 100%;
+    padding: 1rem 1.875rem;
+    border-radius: rem(10);
+    border: 0;
+    cursor: pointer;
+    color: $White;
+    background: $Darkcyan;
+}
+
+//VISIBILITY
+.hide-for-desktop {
+    //Hide for desktop
+    @media (min-width: rem(1400)) {
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    //Hide for mobile
+    @media (max-width: rem(1399)) and (min-width: rem(375)) {
+        display: none;
+    }
+}
